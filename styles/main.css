@@ -4,11 +4,18 @@
     box-sizing: border-box;
 }
 
-
-canvas {
+.wrapper-canvas{
+    width: 500px;
+    height: 500px;
+    display: flex;
+}
+.saveFrame{
+    display: block;
+}
+/* canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: auto;
     height: 100vh;
-}
+} */
