@@ -32,10 +32,10 @@ function HomePage() {
         setrenderState(renderer)
 
         const camara = new PerspectiveCamera(
-            71, 
-            500 /  500,
+            50, 
+            window.innerWidth/window.innerHeight,
             0.1,
-            1000
+            2000
         )
 
         const light = new AmbientLight(0xffffff, 1)
@@ -48,8 +48,10 @@ function HomePage() {
             setrenderState(renderer)
 
         })
-        // mover camara
-        camara.position.z = 6
+        // camara.position.x = 90
+        camara.position.y = 1240
+        camara.position.z = 1270
+        camara.position.x = 0
 
         
         const envTexture = new CubeTextureLoader().load([
@@ -64,15 +66,15 @@ function HomePage() {
             clearcoat: 0.5,
             clearcoatRoughness: 0.5
         });
-        renderer.setSize(500, 500)
+        renderer.setSize(window.innerWidth, window.innerHeight)
 
         const loader = new STLLoader()
         loader.load(
-            '/render/example.stl',
+            '/render/prueba 2.stl',
             function (geometry) {
                 const mesh = new Mesh(geometry, material)
-                geometry.rotateX(90)
-                geometry.rotateY(90)
+                geometry.rotateX(0)
+                geometry.rotateY(0)
                 scene.add(mesh)
             },
             (xhr) => {
@@ -109,14 +111,13 @@ function HomePage() {
 
     return (
         <>
-            <button className="saveFrame" onClick={() => {
-                handleSave()
-            }}>Save</button>
             <div className="wrapper-canvas">
                 <canvas id="bg" />
                 <img src={snapshot} alt="" />
             </div>
-            
+            <button className="saveFrame" onClick={() => {
+                handleSave()
+            }}>Save</button>
         </>
     )
 }
