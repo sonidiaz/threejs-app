@@ -109,14 +109,13 @@ function HomePage() {
 
     return (
         <>
-            <button className="saveFrame" onClick={() => {
-                handleSave()
-            }}>Save</button>
             <div className="wrapper-canvas">
                 <canvas id="bg" />
                 <img src={snapshot} alt="" />
             </div>
-            
+            <button className="saveFrame" onClick={() => {
+                handleSave()
+            }}>Save</button>
         </>
     )
 }

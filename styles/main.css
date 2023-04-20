@@ -11,6 +11,9 @@
 }
 .saveFrame{
     display: block;
+    padding: 15px 10px;
+    margin: 15px auto;
+    width: 300px;
 }
 /* canvas {
     position: fixed;
